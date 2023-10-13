@@ -7,7 +7,6 @@ import euras from '@/assets/home/euras.png'
 import prokuratura from '@/assets/home/prokuratura.png'
 import minObrKR from '@/assets/home/minObrKR.png'
 import Contacts from "../contacts/Contacts"
-import Slider from "react-slick"
 //bgDecore
 import chart from '@/assets/home/bgDecore/chart-2.svg'
 import clock from '@/assets/home/bgDecore/clock.svg'

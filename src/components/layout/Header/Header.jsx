@@ -4,12 +4,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import styles from './Header.module.scss'
-import { useRouter } from 'next/navigation'
 
 
 const Header = ({navLinks}) => {
     const pathname = usePathname();
-    const router = useRouter();
     return (
         <header className={styles.header+' container'} >
             <Image className={styles.header_logo} src={logo} alt='logo' />
@@ -23,9 +21,7 @@ const Header = ({navLinks}) => {
                     })
                 }
             </div>
-            <button onClick={(e)=>{
-                e.preventDefault();
-            }} className={styles.header__btn}>Свяжитесь с нами</button>
+            <Link href={'/contacts'} className={styles.header__btn}>Свяжитесь с нами</Link>
         </header>
     )
 }

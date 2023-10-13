@@ -3,8 +3,8 @@ import Image from 'next/image'
 import React from 'react'
 import macBook from '@/assets/about/MacbookPro.png'
 import styles from './About.module.scss'
-import noPhoto from '@/assets/about/noPhoto.jpg'
-import { Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
+// import noPhoto from '@/assets/about/noPhoto.jpg'
+import {A11y, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css';
 import 'swiper/css/pagination';
