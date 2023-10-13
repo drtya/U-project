@@ -1,12 +1,9 @@
 'use client'
 import Header from '@/components/layout/Header'
 import './globals.css'
-import { Inter } from 'next/font/google'
 import Footer from '@/components/layout/Footer'
 import { store } from '../components/store/store'
 import { Provider } from 'react-redux'
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 export const metadata = {
   title: 'U!',
