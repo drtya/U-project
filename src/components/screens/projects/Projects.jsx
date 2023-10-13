@@ -11,7 +11,7 @@ import texta from '@/assets/projects/texta.svg'
 import Image from 'next/image'
 import styles from './Projects.module.scss'
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
+import { Pagination, Scrollbar, A11y, Autoplay , Navigation } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -91,8 +91,7 @@ const Projects = () => {
             <div className={styles.checkProj} style={{ width: '50%', margin:'auto'}}>
               <div className={styles.projects_slider_box}>
                 
-                <Swiper modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-
+                <Swiper modules={[Navigation,Pagination, Scrollbar, A11y, Autoplay]}
                   spaceBetween={50}
                   autoplay={true}
                   slidesPerView={1}

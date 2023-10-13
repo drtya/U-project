@@ -3,19 +3,15 @@ import Image from 'next/image'
 import React from 'react'
 import macBook from '@/assets/about/MacbookPro.png'
 import styles from './About.module.scss'
-import Slider from 'react-slick'
 import noPhoto from '@/assets/about/noPhoto.jpg'
-
+import { Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay';
 
 const About = () => {
-  let settings = {
-    dots: false,
-    infinite: true,
-    speed: 2000,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    centerMode: false
-  }
 
   const ourTeam = [
     {
@@ -26,7 +22,7 @@ const About = () => {
     {
       name: 'ФИО',
       job: 'Должность',
-      image: noPhoto
+      image: ''
     },
     {
       name: 'ФИО',
@@ -74,16 +70,19 @@ const About = () => {
       </div>
       <div className={styles.team}>
         <h2 className={styles.team_title}>Наша команда</h2>
-        <Slider {...settings}>
+        <Swiper
+          modules={[ A11y, Autoplay]}
+          autoplay={true}
+          slidesPerView={4}>
           {ourTeam.map(team => (
-            <div className={styles.team_box}>
+            <SwiperSlide className={styles.team_box}>
               <div className={styles.team_box_img}>
                 {team.image && <Image style={{ width: '100%', height: '100%' }} src={team.image} />}
               </div>
               <p style={{ fontSize: 'clamp(14px,3vw,24px)', fontWeight: '700' }}><span style={{ fontSize: 'clamp(12px,2vw,22px)', fontWeight: '500' }}>{team.name}</span> <br /> {team.job}</p>
-            </div>
+            </SwiperSlide>
           ))}
-        </Slider>
+        </Swiper>
       </div>
       <section className={styles.history + ' container'}>
         <h2 className={styles.history_title}>История компании</h2>
