@@ -20,16 +20,12 @@ import python from '@/assets/home/bgDecore/python.svg'
 import shieldSearch from '@/assets/home/bgDecore/shield-search.svg'
 import verify from '@/assets/home/bgDecore/verify.svg'
 import Link from "next/link"
-
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Scrollbar, A11y, Autoplay  } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay';
 const Home = () => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 3000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    centerMode: true,
-  };
   const decore_timer = 1000;
   return (
     <main>
@@ -63,36 +59,39 @@ const Home = () => {
         <Image data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="200" data-aos-offset="0" src={global} className={styles.appreciate_decore} />
         <Image data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="200" data-aos-offset="0" src={cup} className={styles.appreciate_decore} />
         <h2 className={styles.appreciate_title}>Ценности компании:</h2>
-        <Slider {...settings}>
-          <div className={styles.slider_bg}>
+        <Swiper modules={[ Scrollbar, A11y, Autoplay]}
+                  spaceBetween={50}
+                  autoplay={true}
+                  slidesPerView={1}>
+          <SwiperSlide className={styles.slider_bg}>
             <div className={styles.slider}>
               <h3 className={styles.slider_title}>Инновации</h3>
               
               <p className={styles.slider_subtitle}>Мы постоянно находились в поиске новых идей и передовых технологий. Инновации являются нашим двигателем, позволяя нам предоставлять клиентам самые современные и эффективные решения.</p>
             </div>
-          </div>
-          <div className={styles.slider_bg}>
+          </SwiperSlide>
+          <SwiperSlide className={styles.slider_bg}>
             <div className={styles.slider}>
               <h3 className={styles.slider_title}>Качество</h3>
               
               <p className={styles.slider_subtitle}>Мы стремимся к высочайшему качеству во всем, что делаем. От дизайна до разработки, каждый этап проекта выполняется с умением и вниманием к деталям.</p>
             </div>
-          </div>
-          <div className={styles.slider_bg}>
+          </SwiperSlide>
+          <SwiperSlide className={styles.slider_bg}>
             <div className={styles.slider}>
               <h3 className={styles.slider_title}>Сотрудничество</h3>
               
               <p className={styles.slider_subtitle}>Мы верим в силу командной работы. Сотрудничество как с нашими клиентами, так и внутри нашей компании, позволяет нам достигать уникальных результатов.</p>
             </div>
-          </div>
-          <div className={styles.slider_bg}>
+          </SwiperSlide>
+          <SwiperSlide className={styles.slider_bg}>
             <div className={styles.slider}>
               <h3 className={styles.slider_title}>Адаптивность</h3>
               
               <p className={styles.slider_subtitle}>Мир цифровых технологий постоянно меняется, и мы готовы адаптироваться к новым вызовам. Гибкость в подходе к проектам позволяет нам эффективно реагировать на изменения.</p>
             </div>
-          </div>
-        </Slider>
+          </SwiperSlide>
+        </Swiper>
 
       </section>
 
