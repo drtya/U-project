@@ -1,0 +1,198 @@
+@mixin textSize($size, $weight) {
+    font-size: $size;
+    font-weight: $weight;
+}
+
+.about {
+    padding-top: clamp(20px, 3vw, 60px);
+    padding-bottom: clamp(20px, 3vw, 60px);
+
+    &_title {
+        @include textSize(clamp(20px, 3vw, 36px), 700);
+        text-align: center;
+        margin-bottom: clamp(20px, 3vw, 40px);
+    }
+
+    &_subtitle_box {
+        @include textSize(clamp(16px, 3vw, 26px), 500);
+        text-align: center;
+        padding: clamp(20px, 3vw, 50px) clamp(20px, 3vw, 65px);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 7px 7px 35px 4px rgba(0, 0, 0, 0.20);
+        backdrop-filter: blur(25px);
+        margin-bottom: clamp(0px, 3vw, 75px);
+    }
+
+    &_info {
+        padding: clamp(30px, 3vw, 75px) 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &_box {
+            width: 30%;
+            text-align: center;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 7px 7px 35px 4px rgba(0, 0, 0, 0.20);
+            backdrop-filter: blur(25px);
+            padding: clamp(10px, 3vw, 43px) clamp(12px, 3vw, 50px);
+
+            &_title {
+                @include textSize(clamp(20px, 3vw, 36px), 700);
+            }
+
+            &_subtitle {
+                @include textSize(clamp(14px, 3vw, 22px), 600);
+            }
+        }
+    }
+
+    &_skills {
+        padding: clamp(30px, 3vw, 75px) 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &_box {
+            width: 50%;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 7px 7px 35px 4px rgba(0, 0, 0, 0.20);
+            backdrop-filter: blur(25px);
+            padding: clamp(30px,3vw,60px) clamp(25px,3vw,40px);
+
+        }
+
+        &_title {
+            @include textSize(clamp(20px,3vw,36px), 700);
+            margin-bottom: clamp(10px,3vw,30px);
+        }
+
+        &_subtitle {
+            @include textSize(clamp(14px,3vw,24px), 400);
+        }
+
+        &_image {
+            object-fit: contain;
+            width: 50%;
+        }
+    }
+}
+
+.team {
+    padding: clamp(30px,3vw,75px) 0;
+
+    &_title {
+        text-align: center;
+        margin-bottom: clamp(20px,3vw,40px);
+        @include textSize(clamp(20px,3vw,36px), 700);
+    }
+
+    &_box {
+        text-align: center;
+
+        &_img {
+            overflow: hidden;
+            margin: 0 auto 16px;
+            width: 180px;
+            height: 180px;
+            border-radius: 100%;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 7px 7px 35px 4px rgba(0, 0, 0, 0.20);
+            backdrop-filter: blur(25px);
+        }
+
+
+    }
+}
+
+.history {
+    padding-top: clamp(40px,3vw,170px);
+    padding-bottom: clamp(40px,3vw,120px);
+
+    &_title {
+        @include textSize(clamp(20px,3vw,36px), 700);
+        margin-bottom: 50px;
+        text-align: center;
+
+    }
+
+    &_block {
+        display: flex;
+        justify-content:space-between;
+        flex-wrap: wrap;
+    }
+
+    &_box {
+        padding: 0 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4vw;
+        gap: 20px;
+        height: 27vw;
+        width: 27vw;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 7px 7px 35px 4px rgba(0, 0, 0, 0.20);
+        backdrop-filter: blur(25px);
+        max-width: 350px;
+        max-height: 350px;
+        @include textSize(14px, 400);
+
+        &_title {
+
+            @include textSize(clamp(14px, 3vw, 22px), 700);
+        }
+    }
+}
+
+@media (max-width:1200px) {
+    .about{
+        &_skills{
+            flex-direction: column;
+            gap: clamp(10px,3vw,30px);
+            &_box{
+                width: 80%;
+            }
+            &_image {
+                width: 80%;
+            }
+        }
+    }
+    .history{
+        &_block {
+        justify-content:space-around;
+    }
+        &_box{
+            
+            height: 33vw;
+        width: 33vw;
+        }
+    }
+    .team{
+        &_box {
+    
+            &_img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+}
+
+@media (max-width:774px) {
+    .team{
+        &_box {
+    
+            &_img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    }
+}

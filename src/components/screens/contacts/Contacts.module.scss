@@ -1,0 +1,143 @@
+@mixin textSize($size, $weight) {
+    font-size: $size;
+    font-weight: $weight;
+}
+
+
+.contacts {
+    padding-top: clamp(30px, 3vw, 70px);
+    padding-bottom: clamp(40px, 3vw, 100px);
+    position: relative;
+
+    &_title {
+        margin-bottom: clamp(20px, 3vw, 50px);
+        @include textSize(clamp(20px, 3vw, 36px), 700);
+        text-align: center;
+    }
+
+    &_block {
+        padding: clamp(35px, 5vw, 124px) clamp(30px, 5vw, 95px);
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(25px);
+    }
+
+    &_form {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(20px, 3vw, 50px);
+
+        &_title {
+            @include textSize(clamp(12px, 3vw, 22px), 500);
+        }
+
+
+
+        &_input {
+            &:focus {
+                outline: none;
+                transition: 0.4s;
+                border-bottom: 0.125rem solid #e32652;
+              }
+            background: none;
+            width: 80%;
+            @include textSize(clamp(12px, 3vw, 22px), 400);
+            height: clamp(30px, 3vw, 40px);
+            outline: none;
+            border: none;
+            border-bottom: 2px solid gray;
+
+            &.active {
+                border: none;
+                border-bottom: 2px solid red;
+            }
+        }
+
+        &_btn {
+            margin-top: 10px;
+            display: block;
+            padding: clamp(8px, 6vw, 15px) clamp(30px, 6vw, 70px);
+            @include textSize(clamp(14px, 3vw, 24px), 700);
+            cursor: pointer;
+            border-radius: 15px;
+            width: 80%;
+            border: 2px solid #E32652;
+            background: #E32652;
+            transition: 0.5s;
+
+            &:hover {
+                background: none;
+                color: #E32652;
+                border: 2px solid #E32652;
+            }
+
+            &_send {
+                margin-top: 10px;
+                display: block;
+                padding: clamp(8px, 6vw, 15px) clamp(30px, 6vw, 70px);
+                width: 80%;
+                @include textSize(clamp(14px, 3vw, 24px), 700);
+                cursor: pointer;
+                border-radius: 15px;
+                color: #fff;
+                border: 2px solid #232323;
+                background: #232323;
+            }
+        }
+    }
+
+    &_info {
+        padding: 55px 63px;
+        position: absolute;
+        border-radius: 20px;
+        top: 15%;
+        right: -110px;
+        background: #E32652;
+        height: 70%;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+
+        &_title {
+            @include textSize(36px, 700);
+            margin-bottom: 10px;
+        }
+
+        &_text {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            @include textSize(18px, 400);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@media (max-width:1200px) {
+
+    .contacts {
+        &_info {
+            display: none;
+        }
+
+        &_form {
+            text-align: center;
+            width: 100%;
+            align-items: center;
+
+            &_btn {
+                width: auto;
+                &_send{
+                    width: auto;
+                }
+            }
+        }
+    }
+}

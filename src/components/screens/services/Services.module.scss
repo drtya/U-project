@@ -1,0 +1,190 @@
+@mixin textSize($size, $weight) {
+    font-size: $size;
+    font-weight: $weight;
+}
+
+.services {
+    padding-top: clamp(30px, 3vw, 60px);
+    padding-bottom: clamp(30px, 3vw, 100px);
+
+    &_decor_left {
+        position: absolute;
+        left: -90px;
+        top: -30px;
+        width: 180px;
+        height: 180px;
+    }
+
+    &_decor_right {
+        position: absolute;
+        right: -90px;
+        top: -30px;
+        width: 180px;
+        height: 180px;
+    }
+
+    &_title {
+        text-align: center;
+        @include textSize(clamp(20px, 3vw, 36px), 700);
+        margin-bottom: clamp(8px,3vw,20px);
+
+    }
+
+    &_subtitle {
+        text-align: center;
+        @include textSize(clamp(14px, 3vw, 26px), 500);
+        margin-bottom: clamp(20px,3vw,80px);
+    }
+
+    &_box {
+        position: relative;
+        text-align: center;
+        padding: clamp(25px, 3vw, 36px) clamp(30px, 3vw, 65px);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 7px 7px 35px 4px rgba(0, 0, 0, 0.20);
+        backdrop-filter: blur(25px);
+        margin-bottom: clamp(30px, 3vw, 120px);
+
+        &_title {
+            @include textSize(clamp(20px, 3vw, 36px), 700);
+            margin-bottom: 10px;
+        }
+
+        &_descr {
+            @include textSize(clamp(14px, 3vw, 26px), 500);
+        }
+    }
+
+    &_tools {
+
+        &_decor_left {
+            position: absolute;
+            left: -90px;
+            top: 30px;
+            width: 180px;
+            height: 180px;
+        }
+
+        &_decor_right {
+            position: absolute;
+            right: -90px;
+            bottom: 30px;
+            width: 180px;
+            height: 180px;
+        }
+
+        &_title {
+            @include textSize(clamp(20px, 3vw, 36px), 700);
+            text-align: center;
+        }
+
+        &_box {
+            padding: clamp(10px, 3vw, 30px) clamp(10px, 3vw, 30px) clamp(20px, 3vw, 50px);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(25px);
+            text-align: center;
+
+            &:last-child {
+                height: 100%
+            }
+
+            &_title {
+                @include textSize(clamp(20px, 3vw, 36px), 700);
+                margin-bottom: 20px;
+            }
+
+            &_descr {
+                @include textSize(clamp(16px, 3vw, 26px), 400);
+                margin-bottom: clamp(10px, 3vw, 40px);
+            }
+
+            &_imgs {
+
+                display: flex;
+                justify-content: space-around;
+
+                &_el {
+                    width: clamp(30px, 3vw, 80px);
+                    height: clamp(30px, 3vw, 80px);
+                }
+            }
+        }
+
+    }
+}
+
+@media (max-width:1200px) {
+    .services {
+        &_decor_left {
+            left: -50px;
+            top: -30px;
+            width: 100px;
+            height: 100px;
+        }
+
+        &_decor_right {
+            right: -50px;
+            top: -30px;
+            width: 100px;
+            height: 100px;
+        }
+
+        &_tools {
+
+            &_decor_left {
+                left: -50px;
+                top: 30px;
+                width: 100px;
+                height: 100px;
+            }
+
+            &_decor_right {
+                position: absolute;
+                right: -50px;
+                bottom: 30px;
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+
+}
+
+@media (max-width:774px) {
+    .services {
+        &_decor_left {
+            left: -30px;
+            top: -30px;
+            width: 60px;
+            height: 60px;
+        }
+
+        &_decor_right {
+            right: -30px;
+            top: -30px;
+            width: 60px;
+            height: 60px;
+        }
+
+        &_tools {
+
+            &_decor_left {
+                left: -30px;
+                top: 30px;
+                width: 60px;
+                height: 60px;
+            }
+
+            &_decor_right {
+                position: absolute;
+                right: -30px;
+                bottom: 30px;
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+}

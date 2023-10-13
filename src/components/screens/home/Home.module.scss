@@ -1,0 +1,471 @@
+@mixin textSize($size, $weight) {
+    font-size: $size;
+    font-weight: $weight;
+}
+
+.home {
+    padding-top: clamp(20px, 5vw, 60px);
+    padding-bottom: clamp(20px, 5vw, 60px);
+
+    &_textbox {
+        width: 50%;
+    }
+
+    &_title {
+        margin-bottom: clamp(28px, 5vh, 40px);
+        @include textSize(clamp(33px, 5vw, 48px), 700);
+    }
+
+    &_subtitle {
+        @include textSize(clamp(14px, 3vw, 22px), 500);
+        margin-bottom: clamp(28px, 5vh, 40px);
+    }
+
+    &_btn {
+        @include textSize(clamp(14px, 3vw, 22px), 700);
+
+        cursor: pointer;
+        border: none;
+        padding: clamp(11px, 3vw, 17px) 30px;
+        border-radius: 15px;
+
+        border: 2px solid #E32652;
+        background: #E32652;
+        transition: 0.5s;
+
+        &:hover {
+            background: none;
+            color: #E32652;
+            border: 2px solid #E32652;
+        }
+    }
+
+    &_logo {
+        width: 50%;
+    }
+}
+
+.power {
+    text-align: center;
+    padding-top: clamp(25px, 10vw, 120px);
+    padding-bottom: clamp(25px, 10vw, 120px);
+
+    &_title {
+        margin-bottom: 30px;
+        @include textSize(clamp(20px, 3vw, 36px), 700);
+    }
+
+    &_subtitle {
+        @include textSize(clamp(14px, 3vw, 18px), 400);
+    }
+}
+
+.appreciate {
+    position: relative;
+    padding-top: clamp(0px, 3vw, 50px);
+    padding-bottom: clamp(20px, 3vw, 50px);
+
+    &_title {
+        text-align: center;
+        margin-bottom: clamp(30px, 3vw, 50px);
+        @include textSize(clamp(20px, 5vw, 36px), 700);
+    }
+
+    &_decore {
+        position: absolute;
+        z-index: -1;
+        width: clamp(50px, 20vw, 180px);
+        height: clamp(50px, 20vw, 180px);
+
+        &:nth-child(1) {
+            top: 80px;
+            left: 20px;
+        }
+
+        &:nth-child(2) {
+            top: 80px;
+            right: 20px;
+        }
+
+        &:nth-child(3) {
+            bottom: 0px;
+            left: 20px;
+        }
+
+        &:nth-child(4) {
+            bottom: 0px;
+            right: 20px;
+        }
+    }
+
+    .slider_bg {
+        .slider {
+            margin: 0 auto;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 7px 7px 35px 4px rgba(0, 0, 0, 0.20);
+            backdrop-filter: blur(25px);
+            display: flex;
+            flex-direction: column;
+            gap: clamp(12px, 3vw, 40px);
+            padding: clamp(33px, 5vw, 66px) clamp(11px, 4vw, 143px);
+            align-items: center;
+            width: 90%;
+            text-align: center;
+
+            &_line {
+                border-radius: 3px;
+                background: #fff;
+                width: 300px;
+                height: 8px;
+            }
+
+            &_title {
+                @include textSize(clamp(18px, 5vw, 48px), 700);
+                border-bottom: clamp(2px, 3vw, 8px) solid #fff;
+                padding-bottom: clamp(12px, 3vw, 40px);
+            }
+
+            &_subtitle {
+                @include textSize(clamp(14px, 5vw, 26px), 600);
+            }
+        }
+    }
+}
+
+.advantages {
+    padding-top: clamp(30px, 3vw, 170px);
+    padding-bottom: clamp(30px, 3vw, 120px);
+    position: relative;
+
+    &_decore {
+        position: absolute;
+        width: clamp(50px, 20vw, 180px);
+        height: clamp(50px, 20vw, 180px);
+        z-index: -1;
+
+        &:nth-child(1) {
+            top: 140px;
+            left: -30px;
+        }
+
+        &:nth-child(2) {
+            top: 140px;
+            right: -30px;
+        }
+
+        &:nth-child(3) {
+            bottom: 10px;
+            left: -30px;
+        }
+
+        &:nth-child(4) {
+            bottom: 10px;
+            right: -30px;
+        }
+    }
+
+    &_title {
+        @include textSize(36px, 700);
+        margin-bottom: 50px;
+        text-align: center;
+
+    }
+
+    &_box {
+        padding: 0 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(6px, 2vw, 20px);
+        height: 33vw;
+        width: 33vw;
+        margin-bottom: 4vw;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 7px 7px 35px 4px rgba(0, 0, 0, 0.20);
+        backdrop-filter: blur(25px);
+        max-width: 350px;
+        max-height: 350px;
+        @include textSize(clamp(6px, 3vw, 16px), 400);
+
+
+        &_title {
+
+            @include textSize(clamp(8px, 3vw, 24px), 700);
+        }
+    }
+}
+
+.services {
+    padding: clamp(0px,3vw,50px) 0;
+    position: relative;
+
+    &_decore {
+        position: absolute;
+        width: clamp(50px, 20vw, 180px);
+        height: clamp(50px, 20vw, 180px);
+        &:nth-child(1) {
+            top: 200px;
+            left: -20px;
+        }
+
+        &:nth-child(2) {
+            top: 240px;
+            right: -20px;
+        }
+
+        &:nth-child(3) {
+            bottom: 60px;
+            left: -20px;
+        }
+
+    }
+
+    &_title {
+        text-align: center;
+        @include textSize(clamp(20px,3vw,36px), 700);
+        margin-bottom: 30px;
+    }
+
+    &_subtitle {
+        text-align: center;
+        @include textSize(clamp(12px,3vw,18px), 400);
+        margin-bottom: 30px;
+    }
+
+    &_box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 37vw;
+        gap: 20px;
+        text-align: center;
+        padding: clamp(10px,3vw,37px) clamp(20px,3vw,55px);
+        border-radius: 16px;
+
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 7px 7px 35px 4px rgba(0, 0, 0, 0.20);
+        backdrop-filter: blur(25px);
+
+        &_btn {
+            font-size: clamp(16px,3vw,24px);
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            cursor: pointer;
+            border: none;
+            padding: clamp(10px,3vw,25px) clamp(20px,3vw,75px);
+            border-radius: 15px;
+
+            border: 2px solid #E32652;
+            background: #E32652;
+            transition: 0.5s;
+
+            &:hover {
+                background: none;
+                color: #E32652;
+                border: 2px solid #E32652;
+            }
+        }
+
+        &_subtitle {
+            @include textSize(clamp(12px,3vw,20px), 400);
+        }
+
+        &_title {
+            @include textSize(clamp(16px,3vw,24px), 700);
+
+        }
+    }
+}
+
+.about {
+    padding: clamp(30px,3vw,70px) 0;
+    text-align: center;
+
+    &_title {
+        margin-bottom: clamp(15px,3vw,30px);
+        @include textSize(clamp(20px,3vw,36px), 700)
+    }
+
+    &_box {
+        margin: 0 auto clamp(20px,3vw,50px);
+        width: 80%;
+        padding: clamp(10px,3vw,62px) clamp(25px,3vw,142px);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 7px 7px 35px 4px rgba(0, 0, 0, 0.20);
+        backdrop-filter: blur(25px);
+        @include textSize(clamp(16px,3vw,26px), 500);
+    }
+
+    &_more {
+        margin-bottom: clamp(10px,3vw,30px);
+        @include textSize(clamp(20px,3vw,36px), 700);
+
+        &_btn {
+            @include textSize(clamp(14px,3vw,24px), 700);
+            cursor: pointer;
+            border: none;
+            padding: 15px clamp(45px,3vw,115px);
+            border-radius: 15px;
+
+            border: 2px solid #E32652;
+            background: #E32652;
+            transition: 0.5s;
+
+            &:hover {
+                background: none;
+                color: #E32652;
+                border: 2px solid #E32652;
+            }
+        }
+    }
+
+}
+
+.projects {
+    padding-top: clamp(30px,3vw,100px) ;
+    padding-bottom: clamp(30px,3vw,100px) ;
+
+    &_title {
+        @include textSize(clamp(20px,3vw,36px), 700);
+        text-align: center;
+        margin-bottom: clamp(15px,3vw,30px);
+    }
+
+    &_subtitle {
+        @include textSize(clamp(16px,3vw,36px), 500);
+        text-align: center;
+        margin-bottom: clamp(20px,3vw,50px);
+    }
+
+    &_box {
+        &_title {
+            @include textSize(clamp(16px,3vw,26px), 700);
+            display: inline-block;
+            position: relative;
+            margin-bottom: clamp(12px,3vw,27px);
+
+            &::before {
+                border-radius: 30px;
+
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: clamp(-7px,3vw,-12px);
+                width: 100%;
+                height: 3px;
+                background-color: #fff;
+            }
+        }
+
+        &_subtitle {
+            @include textSize(clamp(12px,3vw,22px), 500);
+        }
+        &_img{
+            width: 120px;
+            height:  120px;
+        }
+        width: 45%;
+        padding: clamp(15px,3vw,37px);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 7px 7px 35px 4px rgba(0, 0, 0, 0.20);
+        backdrop-filter: blur(25px);
+
+    }
+
+    &_more_btn {
+        display: block;
+        margin: clamp(20px,5vw,80px) auto 0;
+        padding: clamp(15px,3vw,26px) clamp(30px,3vw,54px);
+        @include textSize(clamp(14px,3vw,24px), 700);
+        cursor: pointer;
+        border-radius: 15px;
+
+        border: 2px solid #E32652;
+        background: #E32652;
+        transition: 0.5s;
+
+        &:hover {
+            background: none;
+            color: #E32652;
+            border: 2px solid #E32652;
+        }
+    }
+}
+
+
+
+@media (max-width:774px) {
+
+    .home {
+
+        &_textbox {
+            width: 100%;
+        }
+
+        &_logo {
+            display: none;
+        }
+    }
+
+    .power {
+        &_title {
+            margin-bottom: 10px;
+        }
+
+    }
+
+    .appreciate {
+        .slider_bg {
+            .slider {
+                &_subtitle {
+                    font-weight: 500;
+                }
+            }
+        }
+
+    }
+    .advantages {
+        &_box {
+            line-height: 0.9;
+        }
+    }
+    .projects{
+        &_box {
+            &_title {
+                &::before{
+                    height: 2px;
+                }
+            }
+            &_img{
+                width: 80px;
+                height: 80px;
+            }
+        }
+    }
+}
+@media (max-width:560px) {
+    .advantages {
+        &_box {
+            padding: 0 8px;
+            line-height: 0.8;
+        }
+    }
+    
+    .projects{
+        &_box {
+            
+            &_img{
+                width:60px;
+                height:60px;
+            }
+        }
+    }
+}
