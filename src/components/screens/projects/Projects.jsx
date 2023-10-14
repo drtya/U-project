@@ -11,7 +11,7 @@ import texta from '@/assets/projects/texta.svg'
 import Image from 'next/image'
 import styles from './Projects.module.scss'
 // import Swiper core and required modules
-import { Pagination, Scrollbar, A11y, Autoplay , Navigation } from 'swiper/modules';
+import { Pagination, Scrollbar, A11y, Autoplay, Navigation } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -23,7 +23,7 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 
 const Projects = () => {
-  
+
   const ourProjects = [
     {
       id: 1,
@@ -80,77 +80,78 @@ const Projects = () => {
     <div className={styles.projects + " container"}>
       <h2 className={styles.projects_title}>Наши проекты</h2>
       {ourProjects.map(el => (
-        el.id %2 ===0 ?
-        <div data-aos="fade-right"  className={styles.projects_box}>
-          <div className='row'>
-            <div style={{ width: '50%', display: 'flex', flexDirection: 'column', gap: '15px' }}>
-              <Image className={styles.projects_box_img} src={el.logo} />
-              <h3 className={styles.projects_box_title}>{el.name}</h3>
-              <p className={styles.projects_box_descr}>{el.descr}</p>
-            </div>
-            <div className={styles.checkProj} style={{ width: '50%', margin:'auto'}}>
-              <div className={styles.projects_slider_box}>
-                
-                <Swiper modules={[Navigation,Pagination, Scrollbar, A11y, Autoplay]}
-                  spaceBetween={50}
-                  autoplay={true}
-                  slidesPerView={1}
-                  pagination={{ clickable: true }}>
-                  <SwiperSlide style={{ backgroundColor: 'black' }} className={styles.projects_box_imgProj}>
-                    <Image />
-                  </SwiperSlide>
-                  <SwiperSlide className={styles.projects_box_imgProj}>
-                    <Image />
-                  </SwiperSlide>
-                  <SwiperSlide className={styles.projects_box_imgProj}>
-                    <Image />
-                  </SwiperSlide>
-                  <SwiperSlide className={styles.projects_box_imgProj}>
-                    <Image />
-                  </SwiperSlide>
-                </Swiper>
+        el.id % 2 === 0 ?
+          <div data-aos="fade-right" className={styles.projects_box}>
+            <div className='row'>
+              <div style={{ width: '50%', display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                <Image className={styles.projects_box_img} src={el.logo} />
+                <h3 className={styles.projects_box_title}>{el.name}</h3>
+                <p className={styles.projects_box_descr}>{el.descr}</p>
               </div>
-              <button className={styles.checkProj_btn} >Перейти на сайт</button>
-            </div>
+              <div className={styles.checkProj} style={{ width: '50%', margin: 'auto' }}>
+                <div className={styles.projects_slider_box}>
 
-          </div>
-        </div>
-        :
-        <div data-aos="fade-left" className={styles.projects_box}>
-          <div className='row'>
-            <div style={{ width: '50%', display: 'flex', flexDirection: 'column', gap: '15px' }}>
-              <Image className={styles.projects_box_img} src={el.logo} />
-              <h3 className={styles.projects_box_title}>{el.name}</h3>
-              <p className={styles.projects_box_descr}>{el.descr}</p>
-            </div>
-            <div className={styles.checkProj} style={{ width: '50%', margin:'auto'}}>
-              <div className={styles.projects_slider_box}>
-                
-                <Swiper modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-
-                  spaceBetween={50}
-                  autoplay={true}
-                  slidesPerView={1}
-                  pagination={{ clickable: true }}>
-                  <SwiperSlide style={{ backgroundColor: 'black' }} className={styles.projects_box_imgProj}>
-                    <Image />
-                  </SwiperSlide>
-                  <SwiperSlide className={styles.projects_box_imgProj}>
-                    <Image />
-                  </SwiperSlide>
-                  <SwiperSlide className={styles.projects_box_imgProj}>
-                    <Image />
-                  </SwiperSlide>
-                  <SwiperSlide className={styles.projects_box_imgProj}>
-                    <Image />
-                  </SwiperSlide>
-                </Swiper>
+                  <Swiper modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                    loop={true}
+                    spaceBetween={50}
+                    autoplay={true}
+                    slidesPerView={1}
+                    pagination={{ clickable: true }}>
+                    <SwiperSlide style={{ backgroundColor: 'black' }} className={styles.projects_box_imgProj}>
+                      <Image />
+                    </SwiperSlide>
+                    <SwiperSlide className={styles.projects_box_imgProj}>
+                      <Image />
+                    </SwiperSlide>
+                    <SwiperSlide className={styles.projects_box_imgProj}>
+                      <Image />
+                    </SwiperSlide>
+                    <SwiperSlide className={styles.projects_box_imgProj}>
+                      <Image />
+                    </SwiperSlide>
+                  </Swiper>
+                </div>
+                <button className={styles.checkProj_btn} >Перейти на сайт</button>
               </div>
-              <button className={styles.checkProj_btn} >Перейти на сайт</button>
-            </div>
 
+            </div>
           </div>
-        </div>
+          :
+          <div data-aos="fade-left" className={styles.projects_box}>
+            <div className='row'>
+              <div style={{ width: '50%', display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                <Image className={styles.projects_box_img} src={el.logo} />
+                <h3 className={styles.projects_box_title}>{el.name}</h3>
+                <p className={styles.projects_box_descr}>{el.descr}</p>
+              </div>
+              <div className={styles.checkProj} style={{ width: '50%', margin: 'auto' }}>
+                <div className={styles.projects_slider_box}>
+
+                  <Swiper modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+
+                    spaceBetween={50}
+                    autoplay={true}
+                    slidesPerView={1}
+                    pagination={{ clickable: true }}>
+                    <SwiperSlide style={{ backgroundColor: 'black' }} className={styles.projects_box_imgProj}>
+                      <Image />
+                    </SwiperSlide>
+                    <SwiperSlide className={styles.projects_box_imgProj}>
+                      <Image />
+                    </SwiperSlide>
+                    <SwiperSlide className={styles.projects_box_imgProj}>
+                      <Image />
+                    </SwiperSlide>
+                    <SwiperSlide className={styles.projects_box_imgProj}>
+                      <Image />
+                    </SwiperSlide>
+                  </Swiper>
+                </div>
+                <button className={styles.checkProj_btn} >Перейти на сайт</button>
+              </div>
+
+            </div>
+          </div>
       ))}
     </div>
   )

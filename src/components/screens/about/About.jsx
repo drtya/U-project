@@ -4,10 +4,10 @@ import React from 'react'
 import macBook from '@/assets/about/MacbookPro.png'
 import styles from './About.module.scss'
 // import noPhoto from '@/assets/about/noPhoto.jpg'
-import {A11y, Autoplay } from 'swiper/modules';
+import { A11y, Autoplay, Navigation, Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css';
-import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 
@@ -71,7 +71,9 @@ const About = () => {
       <div className={styles.team}>
         <h2 className={styles.team_title}>Наша команда</h2>
         <Swiper
-          modules={[ A11y, Autoplay]}
+          modules={[A11y, Autoplay, Navigation, Scrollbar]}
+          spaceBetween={50}
+          loop={true}
           autoplay={true}
           slidesPerView={4}>
           {ourTeam.map(team => (
